@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Layout2 = (props) => {
+const Layout2 = () => {
     return (
         <div>
             <h1>AOS scrolling effect</h1>
