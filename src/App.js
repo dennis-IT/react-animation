@@ -1,41 +1,17 @@
-import { Component } from 'react';
-import { Transition, animated } from 'react-spring/renderprops'
+import { React, Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import Component1 from './components/Component1'
-import Component2 from './components/Component2'
-import Component3 from './components/Component3'
+import Layout1 from './Layout1';
+import Layout2 from './Layout2';
 
 class App extends Component {
-  state = {
-    showComponent3: false
-  }
-
-  toggle = () => {
-    this.setState({ showComponent3: !this.state.showComponent3 });
-  }
-
   render() {
     return (
-      <div className="App">
-        <h1>React-Spring Animation Demo</h1>
-        <br />
-        <Component1 />
-        <Component2 toggle={this.toggle} />
-        <Transition
-          native
-          items={this.state.showComponent3}
-          from={{ opacity: 0 }}
-          enter={{ opacity: 1 }}
-          leave={{ opacity: 0 }}
-        >
-          {show => show && (props => (
-            <animated.div style={props}>
-              <Component3 />
-            </animated.div>
-          ))}
-        </Transition>
-      </div>
-    )
+      <Switch>
+        <Route exact path='/aos' render={props => <Layout2 {...props} />} />
+        <Route path='/' render={props => <Layout1 {...props} />} />
+      </Switch>
+    );
   }
 }
 
