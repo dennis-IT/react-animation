@@ -14,8 +14,6 @@ const Layout1 = () => {
 
     return (
         <React.Fragment>
-            <h1 style={{ paddingLeft: '1.5rem' }}>React-Spring Animation</h1>
-            <br />
             <Component1 />
             <Component2 toggle={toggle} />
             <Transition

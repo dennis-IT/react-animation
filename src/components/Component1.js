@@ -1,5 +1,5 @@
 import React from 'react';
-import { Spring } from 'react-spring/renderprops'
+import { Spring } from 'react-spring/renderprops';
 
 const Component1 = () => {
     return (
@@ -19,9 +19,9 @@ const Component1 = () => {
                         >
                             {props => (
                                 <div style={props}>
-                                    <h1 style={counter}>
-                                        {props.number.toFixed()}
-                                    </h1>
+                                    <div style={counter}>
+                                        <h1>{props.number.toFixed()}</h1>
+                                    </div>
                                 </div>
                             )}
                         </Spring>
@@ -29,8 +29,8 @@ const Component1 = () => {
                 </div>
             )}
         </Spring>
-    )
-}
+    );
+};
 
 const c1Style = {
     background: 'lightgrey',
@@ -39,16 +39,19 @@ const c1Style = {
     paddingBottom: '1rem',
     paddingLeft: '1.5rem',
     paddingRight: '1.5rem'
-}
+};
 
 const counter = {
-    textAlign: 'center',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: 'black',
     color: 'white',
-    width: '100px',
+    width: '80px',
+    height: '80px',
     borderRadius: '50%',
     margin: '1rem auto'
-}
+};
 
 export default Component1;
 

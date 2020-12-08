@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     buttonStyle: {
         color: 'ivory',
         fontSize: '1.25rem',
-        width: '12rem'
+        width: '10rem'
     }
 }));
 
@@ -114,7 +114,7 @@ const Navbar = (props) => {
                             <div className={classes.headerOptions}>
                                 {menuItems.map((menuItem) => {
                                     return (
-                                        <Box key={uuid()} mr={4}><Button variant="outlined" color="secondary" className={classes.buttonStyle} disableElevation onClick={() => handleButtonClick(menuItem.itemUrl)}>{menuItem.itemTitle}</Button></Box>
+                                        <Box key={uuid()} mr={4}><Button variant="outlined" color="primary" className={classes.buttonStyle} disableElevation onClick={() => handleButtonClick(menuItem.itemUrl)}>{menuItem.itemTitle}</Button></Box>
                                     );
                                 })}
                             </div>
