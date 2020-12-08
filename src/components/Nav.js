@@ -1,4 +1,5 @@
 import React from 'react';
+import uuid from 'react-uuid';
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Toolbar, Typography, IconButton, MenuItem, Menu, Button } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -55,6 +56,18 @@ const Navbar = (props) => {
         history.push(pageUrl);
     };
 
+    //Shrink the code
+    const menuItems = [
+        {
+            itemTitle: 'React-spring',
+            itemUrl: '/'
+        },
+        {
+            itemTitle: 'AOS',
+            itemUrl: '/aos'
+        }
+    ];
+
     return (
         <div className={classes.root}>
             <AppBar position="static" color="primary">
@@ -89,15 +102,21 @@ const Navbar = (props) => {
                                 open={open}
                                 onClose={() => setAnchorEl(null)}
                             >
-                                <MenuItem onClick={() => handleMenuClick('/')}>React-Spring</MenuItem>
-                                <MenuItem onClick={() => handleMenuClick('/aos')}>AOS</MenuItem>
+                                {menuItems.map((menuItem) => {
+                                    return (
+                                        <MenuItem key={uuid()} onClick={() => handleMenuClick(menuItem.itemUrl)}>{menuItem.itemTitle}</MenuItem>
+                                    );
+                                })}
                             </Menu>
                         </div>
                     )
                         : (
                             <div className={classes.headerOptions}>
-                                <Box mr={4}><Button variant="outlined" color="secondary" className={classes.buttonStyle} disableElevation onClick={() => handleButtonClick('/')}>React-spring</Button></Box>
-                                <Box mr={4}><Button variant="outlined" color="secondary" className={classes.buttonStyle} disableElevation onClick={() => handleButtonClick('/aos')}>AOS</Button></Box>
+                                {menuItems.map((menuItem) => {
+                                    return (
+                                        <Box key={uuid()} mr={4}><Button variant="outlined" color="secondary" className={classes.buttonStyle} disableElevation onClick={() => handleButtonClick(menuItem.itemUrl)}>{menuItem.itemTitle}</Button></Box>
+                                    );
+                                })}
                             </div>
                         )}
                 </Toolbar>
