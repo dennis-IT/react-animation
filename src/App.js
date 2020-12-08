@@ -1,16 +1,19 @@
 import { React, Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
+import Layout from './hoc/Layout';
 import Layout1 from './Layout1';
 import Layout2 from './Layout2';
 
 class App extends Component {
   render() {
     return (
-      <Switch>
-        <Route exact path='/aos' render={props => <Layout2 {...props} />} />
-        <Route path='/' render={props => <Layout1 {...props} />} />
-      </Switch>
+      <Layout>
+        <Switch>
+          <Route exact path='/aos' component={Layout2} />
+          <Route path='/' component={Layout1} />
+        </Switch>
+      </Layout>
     );
   }
 }

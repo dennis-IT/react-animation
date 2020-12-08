@@ -5,7 +5,7 @@ import Component1 from './components/Component1';
 import Component2 from './components/Component2';
 import Component3 from './components/Component3';
 
-const Layout1 = (props) => {
+const Layout1 = () => {
     const [showComponent3, setShowComponent3] = useState(false);
 
     const toggle = () => {
@@ -14,7 +14,7 @@ const Layout1 = (props) => {
 
     return (
         <React.Fragment>
-            <h1>React-Spring Animation</h1>
+            <h1 style={{ paddingLeft: '1.5rem' }}>React-Spring Animation</h1>
             <br />
             <Component1 />
             <Component2 toggle={toggle} />
