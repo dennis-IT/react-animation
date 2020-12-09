@@ -3,6 +3,7 @@ import uuid from 'react-uuid';
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Toolbar, Typography, IconButton, MenuItem, Menu, Button } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+import MenuOpenIcon from '@material-ui/icons/MenuOpen';
 import { withRouter } from 'react-router-dom';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
@@ -38,6 +39,7 @@ const Navbar = (props) => {
     const { history } = props;
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const [menuOpened, setMenuStyle] = React.useState(false);
     const open = Boolean(anchorEl);
 
     const theme = useTheme();
@@ -45,11 +47,17 @@ const Navbar = (props) => {
 
     const handleMenu = (event) => {
         setAnchorEl(event.currentTarget);
+        setMenuStyle(true);
+    };
+
+    const handleMenuClose = () => {
+        setAnchorEl(null);
+        setMenuStyle(false);
     };
 
     const handleMenuClick = (pageUrl) => {
         history.push(pageUrl);
-        setAnchorEl(null);
+        handleMenuClose();
     };
 
     const handleButtonClick = pageUrl => {
@@ -84,23 +92,25 @@ const Navbar = (props) => {
                                 color="inherit"
                                 aria-label="menu"
                                 onClick={handleMenu}
+                                style={{ padding: '1.25rem 1.25rem' }}
                             >
-                                <MenuIcon />
+                                {!menuOpened ? (<MenuIcon />) : (<MenuOpenIcon />)}
                             </IconButton>
                             <Menu
                                 id="menu-appbar"
+                                getContentAnchorEl={null}
                                 anchorEl={anchorEl}
                                 anchorOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
+                                    vertical: 'bottom',
+                                    horizontal: 'center',
                                 }}
                                 keepMounted
                                 transformOrigin={{
                                     vertical: 'top',
-                                    horizontal: 'right',
+                                    horizontal: 'center',
                                 }}
                                 open={open}
-                                onClose={() => setAnchorEl(null)}
+                                onClose={handleMenuClose}
                             >
                                 {menuItems.map((menuItem) => {
                                     return (
