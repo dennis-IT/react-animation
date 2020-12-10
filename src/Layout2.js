@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
-import Aos from 'aos';
-import "aos/dist/aos.css";
+import React from 'react';
 import { Box } from "@material-ui/core";
+import { makeStyles } from '@material-ui/core/styles';
 import PaintingCard from './components/PaintingCard';
 
 const data = [
@@ -32,19 +31,29 @@ const data = [
     }
 ];
 
+const useStyles = makeStyles(theme => ({
+    container: {
+        maxWidth: '1000px',
+        margin: 'auto',
+        padding: '0 2rem'
+    }
+}
+));
+
 const Layout2 = () => {
-    useEffect(() => {
-        Aos.init({ duration: 2000 });
-    }, []);
+    const classes = useStyles();
 
     return (
-        <div>
-            <Box display="flex" justifyContent="center" mt={2} >
-                <h1><span>Acrylic Painting</span> Gallery</h1>
+        <div className={classes.container}>
+            <Box display="flex" flexDirection="column" justifyContent="center" mt={8} mb={8} style={{ textAlign: 'center' }}>
+                <h1><span style={{ color: 'darkred' }}>Acrylic Painting</span> Gallery</h1>
+                <p style={{ fontSize: '1.25rem', marginTop: '1rem' }}>Mauris non semper nibh, ac lacinia nunc. Nunc dictum enim tristique ligula molestie, in vestibulum ipsum tincidunt. </p>
             </Box>
-            {data.map(paint => (
-                <PaintingCard datum={paint} />
-            ))}
+            <div>
+                {data.map(paint => (
+                    <PaintingCard datum={paint} />
+                ))}
+            </div>
         </div>
     );
 };
