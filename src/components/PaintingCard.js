@@ -15,7 +15,10 @@ const useStyles = makeStyles(theme => ({
 const PaintingCard = (props) => {
     const classes = useStyles();
     useEffect(() => {
-        Aos.init({ duration: 2000 });
+        Aos.init({
+            offset: 400,
+            duration: 1500
+        });
     }, []);
 
     return (
