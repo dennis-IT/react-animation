@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/react-animation/static/css/main.f46d04db.chunk.css",
-    "main.js": "/react-animation/static/js/main.a6ed5e2c.chunk.js",
-    "main.js.map": "/react-animation/static/js/main.a6ed5e2c.chunk.js.map",
+    "main.js": "/react-animation/static/js/main.de42aa5b.chunk.js",
+    "main.js.map": "/react-animation/static/js/main.de42aa5b.chunk.js.map",
     "runtime-main.js": "/react-animation/static/js/runtime-main.a25d611a.js",
     "runtime-main.js.map": "/react-animation/static/js/runtime-main.a25d611a.js.map",
     "static/css/2.ec02d681.chunk.css": "/react-animation/static/css/2.ec02d681.chunk.css",
-    "static/js/2.87a81ad3.chunk.js": "/react-animation/static/js/2.87a81ad3.chunk.js",
-    "static/js/2.87a81ad3.chunk.js.map": "/react-animation/static/js/2.87a81ad3.chunk.js.map",
+    "static/js/2.3e0ddfe0.chunk.js": "/react-animation/static/js/2.3e0ddfe0.chunk.js",
+    "static/js/2.3e0ddfe0.chunk.js.map": "/react-animation/static/js/2.3e0ddfe0.chunk.js.map",
     "index.html": "/react-animation/index.html",
     "static/css/2.ec02d681.chunk.css.map": "/react-animation/static/css/2.ec02d681.chunk.css.map",
     "static/css/main.f46d04db.chunk.css.map": "/react-animation/static/css/main.f46d04db.chunk.css.map",
-    "static/js/2.87a81ad3.chunk.js.LICENSE.txt": "/react-animation/static/js/2.87a81ad3.chunk.js.LICENSE.txt"
+    "static/js/2.3e0ddfe0.chunk.js.LICENSE.txt": "/react-animation/static/js/2.3e0ddfe0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a25d611a.js",
     "static/css/2.ec02d681.chunk.css",
-    "static/js/2.87a81ad3.chunk.js",
+    "static/js/2.3e0ddfe0.chunk.js",
     "static/css/main.f46d04db.chunk.css",
-    "static/js/main.a6ed5e2c.chunk.js"
+    "static/js/main.de42aa5b.chunk.js"
   ]
 }
