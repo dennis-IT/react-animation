@@ -2,6 +2,7 @@ import React from 'react';
 import { Box } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 import PaintingCard from './components/PaintingCard';
+import uuid from 'react-uuid';
 
 const data = [
     {
@@ -51,7 +52,7 @@ const Layout2 = () => {
             </Box>
             <div>
                 {data.map(paint => (
-                    <PaintingCard datum={paint} />
+                    <PaintingCard datum={paint} key={uuid()} />
                 ))}
             </div>
         </div>
